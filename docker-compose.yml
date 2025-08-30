@@ -1,0 +1,21 @@
+services:
+  db:
+    image: postgres:13-alpine
+    # ...
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    # ...
+  websocket:
+    build:
+      context: .
+      dockerfile: Dockerfile.websocket
+    # ...
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    # ...
+volumes:
+  db_data:
